@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Landing Page</title>
+	<script>
+		// Get the offer ID and transaction ID from the URL parameters
+		const urlParams = new URLSearchParams(window.location.search);
+		const offerId = urlParams.get('offerid');
+		const transId = urlParams.get('trans');
+		
+		// Display the offer ID and transaction ID on the page
+		document.write(`<p>Offer ID: ${offerId}</p>`);
+		document.write(`<p>Transaction ID: ${transId}</p>`);
+	</script>
+</head>
+<body>
+	<h1>Welcome to our Landing Page!</h1>
+	<p>Thank you for visiting our website. Please take a look at our special offer below:</p>
+	<!-- Add your offer details here -->
+</body>
+</html>
