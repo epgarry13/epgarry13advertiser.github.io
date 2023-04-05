@@ -53,69 +53,6 @@
 		}();	
 
 		tdl.init({"ethangarry": "https://ethangarry.go2cloud.org"})
-
-		document.write(`<p>Offer ID: ${offerId}</p>`);
-		document.write(`<p>Transaction ID: ${transId}</p>`);
-	</script>
-</head>
-<body>
-	<h1>Welcome to our Landing Page!</h1>
-	<p>Thank you for visiting our website. Please take a look at our special offer below:</p>
-	<!DOCTYPE html>
-<html>
-<head>
-	<title>Landing Page</title>
-	<script>
-		// Get the offer ID and transaction ID from the URL parameters
-		const urlParams = new URLSearchParams(window.location.search);
-		const offerId = urlParams.get('offerid');
-		const transId = urlParams.get('trans');
-		
-		!function() {
-
-		  // Define the tdl variable on the global window object, if it doesn't already exist
-		  var o = window.tdl = window.tdl || [];
-
-		  // If the Tune snippet has already been included on the page, log an error message to the console
-		  if (o.invoked) {
-		    window.console && console.error && console.error("Tune snippet has been included more than once.");
-		  }
-		  else {
-		    // Mark the Tune snippet as invoked, so it's not included multiple times
-		    o.invoked = !0;
-
-		    // Define the methods available on the Tune object
-		    o.methods = ["init", "identify", "convert"];
-
-		    // Create a factory function that adds the method name to the arguments and pushes it onto the tdl array
-		    o.factory = function(n) {
-		      return function() {
-			var e = Array.prototype.slice.call(arguments);
-			e.unshift(n);
-			o.push(e);
-		      }
-		    };
-
-		    // Loop through the methods array and create functions for each method using the factory function
-		    for (var e = 0; e < o.methods.length; e++) {
-		      var n = o.methods[e];
-		      o[n] = o.factory(n);
-		    }
-
-		    // Define the init method, which creates a script element to load the Tune SDK and sets the domain
-		    o.init = function(e) {
-		      var n = document.createElement("script");
-		      n.type = "text/javascript";
-		      n.async = !0;
-		      n.src = "https://js.go2sdk.com/v2/tune.js";
-		      var t = document.getElementsByTagName("script")[0];
-		      t.parentNode.insertBefore(n, t);
-		      o.domain = e;
-		    }
-		  }
-		}();	
-
-		tdl.init({"ethangarry": "https://ethangarry.go2cloud.org"})
 		// tdl.convert()
 		document.write(`<p>Offer ID: ${offerId}</p>`);
 		document.write(`<p>Transaction ID: ${transId}</p>`);
@@ -126,9 +63,6 @@
 	<p>Thank you for visiting our website. Please take a look at our special offer below:</p>
     <button onclick="tdl.convert(); alert('Conversion successful!');">Convert now</button>
 
-	<!-- Add your offer details here -->
-</body>
-</html>
 	<!-- Add your offer details here -->
 </body>
 </html>
